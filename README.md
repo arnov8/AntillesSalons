@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Antilles Salons — Site Web
 
-## Getting Started
+Site officiel d'**Antilles Salons**, organisateur de salons professionnels et grand public en **Martinique & Guadeloupe**.
 
-First, run the development server:
+Construit avec **Next.js 16** (App Router, Turbopack), design fidèle au site original Wix Studio.
+
+---
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Accueil — hero, événements, services, avantages, CTA |
+| `/about` | À propos — histoire, stats, partenaires exposants |
+| `/services` | Liste des services |
+| `/services/[slug]` | Détail service (visibilité, prospects, réseautage, leads) |
+| `/contact` | Formulaire de contact avec envoi d'emails via Resend |
+
+---
+
+## Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Wix Madefor Display / Text** (Google Fonts)
+- **Resend** — envoi d'emails transactionnels
+- **Lucide React** — icônes
+
+---
+
+## Démarrage local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration emails (Resend)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crée un fichier `.env.local` à la racine :
 
-## Learn More
+```env
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_FROM=Antilles Salons <organisation@antillessalons.com>
+OWNER_EMAIL=organisation@antillessalons.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+> Le domaine `antillessalons.com` doit être vérifié dans [Resend → Domains](https://resend.com/domains).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
+Le site est prêt pour un déploiement sur **Vercel** :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx vercel --prod
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ajoute les variables d'environnement `RESEND_API_KEY`, `RESEND_FROM` et `OWNER_EMAIL` dans les settings du projet Vercel.
+
+---
+
+## Nos salons
+
+- [Salon du Mariage de Martinique](https://www.salondumariagemartinique.com/)
+- [Salon des CHR de Martinique](https://www.salondeschrmartinique.com/)
+- [Salon des CSE & COS de Martinique](https://www.salondescemartinique.com/)
+- [Salon des CSE & COS de Guadeloupe](https://www.salondesceguadeloupe.com/)
+- [Séminaire Antillais des CSE & COS](https://www.seminaireantillaisdescse.com/)
+
+---
+
+© Antilles Salons — Martinique & Guadeloupe

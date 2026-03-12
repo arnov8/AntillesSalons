@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #514EA7;
+  --color-dark: #151515;
+  --color-light-bg: #F6F6F6;
+  --color-accent: #116DFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 94% 90%, rgba(247, 156, 13, 0.18) 0%, 24%, rgba(247, 156, 13, 0) 50%),
+    radial-gradient(circle at 6.5% 88%, rgba(76, 175, 80, 0.18) 0%, 24%, rgba(76, 175, 80, 0) 50%),
+    radial-gradient(circle at 50% 5%, rgba(81, 78, 167, 0.12) 0%, 30%, rgba(81, 78, 167, 0) 60%),
+    linear-gradient(180deg, rgba(235, 234, 255, 0.6) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(246, 246, 246, 0.9) 100%);
+  background-attachment: fixed;
+  color: #151515;
+}
+
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.blob-shape-2 {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #514EA7;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #514EA7;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #403d96;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(81, 78, 167, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #514EA7;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid #514EA7;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #514EA7;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
