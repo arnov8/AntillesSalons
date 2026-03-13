@@ -36,14 +36,16 @@ const stats = [
 ];
 
 const partners = [
-  "Grain d'Or",
-  "Air Caraïbes",
-  "Le Château",
-  "Air France",
-  "Karucoco",
-  "La Conserverie Créole",
-  "Nespresso",
-  "UpCoop",
+  { name: "Air France", logo: "/logos/air-france.svg", scale: 1 },
+  { name: "Air Caraïbes", logo: "/logos/air-caraibes.svg", scale: 1 },
+  { name: "Nespresso", logo: "/logos/nespresso.png", scale: 1 },
+  { name: "UpCoop", logo: "/logos/upcoop.png", scale: 1 },
+  { name: "Grain d'Or", logo: "/logos/grain-dor.jpg", scale: 1.9 },
+  { name: "Le Château", logo: "/logos/le-chateau-martinique.jpg", scale: 1.1 },
+  { name: "La Conserverie Créole", logo: "/logos/la-conserverie-creole.webp", scale: 1 },
+  { name: "Karucoco", logo: "/logos/karucoco.png", scale: 1 },
+  { name: "Dream Print", logo: "/logos/dream-print.jpg", scale: 1.7 },
+  { name: "AVS Voyages", logo: "/logos/avs-voyages.png", scale: 1.1 },
 ];
 
 export default function AboutPage() {
@@ -118,10 +120,18 @@ export default function AboutPage() {
                 en Martinique et en Guadeloupe. Depuis plus de 10 ans, nous créons des événements qui
                 rassemblent exposants et visiteurs autour de thématiques fortes et pertinentes pour les Antilles.
               </p>
-              <p style={{ color: "#555", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: "2rem" }}>
+              <p style={{ color: "#555", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: "1rem" }}>
                 Notre mission est de favoriser les rencontres professionnelles et commerciales au sein
                 des territoires antillais. Nous organisons 5 salons annuels qui attirent ensemble plus de
                 4 600 visiteurs, offrant aux exposants une visibilité inégalée sur leur marché local.
+              </p>
+              <p style={{ color: "#555", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: "2rem" }}>
+                Nous sommes aussi spécialisés dans l&apos;organisation de séminaires professionnels.
+                Notre Séminaire Antillais des CSE &amp; COS est
+                l&apos;événement de référence pour les élus et acteurs des comités sociaux et économiques
+                des Antilles. Conférences, formations, ateliers pratiques et networking : nous offrons un
+                cadre professionnel exigeant, conçu pour répondre aux enjeux réels des représentants du
+                personnel en Martinique et en Guadeloupe.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
                 <Link href="/services" className="btn-primary">Nos services</Link>
@@ -282,37 +292,39 @@ export default function AboutPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-              gap: "1.25rem",
+              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+              gap: "1.5rem",
             }}
           >
             {partners.map((partner, index) => (
               <div
                 key={index}
+                className="card-hover"
+                title={partner.name}
                 style={{
                   background: "white",
-                  borderRadius: "1rem",
+                  borderRadius: "1.25rem",
                   padding: "1.5rem",
-                  textAlign: "center",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
                   border: "1px solid rgba(0,0,0,0.06)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  minHeight: "80px",
+                  minHeight: "110px",
                 }}
               >
-                <p
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={160}
+                  height={80}
                   style={{
-                    fontFamily: "var(--font-wix-display), sans-serif",
-                    fontWeight: 700,
-                    fontSize: "0.9rem",
-                    color: "#333",
-                    textAlign: "center",
+                    objectFit: "contain",
+                    maxHeight: `${60 * partner.scale}px`,
+                    width: "auto",
+                    maxWidth: `${140 * partner.scale}px`,
                   }}
-                >
-                  {partner}
-                </p>
+                />
               </div>
             ))}
           </div>

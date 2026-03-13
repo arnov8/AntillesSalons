@@ -5,30 +5,31 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#151515",
-        color: "white",
+        background: "transparent",
+        color: "#151515",
         padding: "4rem 1.5rem 2rem",
         marginTop: "4rem",
+        borderTop: "1px solid rgba(0,0,0,0.07)",
       }}
     >
       <style>{`
         .footer-link {
-          color: rgba(255,255,255,0.7);
+          color: rgba(0,0,0,0.55);
           text-decoration: none;
           font-size: 0.9rem;
           transition: color 0.2s;
         }
-        .footer-link:hover { color: white; }
+        .footer-link:hover { color: #514EA7; }
         .social-btn {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.08);
-          border: 1px solid rgba(255,255,255,0.12);
+          background: rgba(81,78,167,0.07);
+          border: 1px solid rgba(81,78,167,0.15);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: rgba(255,255,255,0.7);
+          color: rgba(0,0,0,0.5);
           transition: all 0.2s;
           text-decoration: none;
         }
@@ -39,7 +40,7 @@ export default function Footer() {
         }
         .email-link {
           font-size: 0.85rem;
-          color: rgba(255,255,255,0.9);
+          color: #151515;
           text-decoration: none;
           font-weight: 500;
         }
@@ -66,21 +67,20 @@ export default function Footer() {
                 style={{
                   height: "70px",
                   width: "auto",
-                  filter: "brightness(0) invert(1)",
                   marginBottom: "1rem",
                 }}
               />
             </Link>
             <p
               style={{
-                color: "rgba(255,255,255,0.65)",
+                color: "rgba(0,0,0,0.55)",
                 fontSize: "0.9rem",
                 lineHeight: 1.6,
                 maxWidth: "300px",
                 marginTop: "1rem",
               }}
             >
-              Organisateur de salons professionnels et grand public en Martinique &amp; Guadeloupe
+              Organisateur de salons professionnels et séminaires en Martinique &amp; Guadeloupe
             </p>
             <nav style={{ marginTop: "1.5rem" }}>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -106,7 +106,7 @@ export default function Footer() {
                 fontWeight: 700,
                 marginBottom: "1.25rem",
                 fontFamily: "var(--font-wix-display), sans-serif",
-                color: "white",
+                color: "#151515",
               }}
             >
               En savoir plus?
@@ -121,11 +121,11 @@ export default function Footer() {
                   </svg>
                 </span>
                 <div>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.75rem", marginBottom: "0.25rem" }}>Téléphone</p>
+                  <p style={{ color: "rgba(0,0,0,0.4)", fontSize: "0.75rem", marginBottom: "0.25rem" }}>Téléphone</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
-                    <a href="tel:0596612121" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none", fontSize: "0.88rem" }}>05 96 61 21 21</a>
-                    <a href="tel:0696263096" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none", fontSize: "0.88rem" }}>06 96 26 30 96</a>
-                    <a href="tel:0696334700" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none", fontSize: "0.88rem" }}>06 96 33 47 00</a>
+                    <a href="tel:0596612121" style={{ color: "#151515", textDecoration: "none", fontSize: "0.88rem" }}>05 96 61 21 21</a>
+                    <a href="tel:0696263096" style={{ color: "#151515", textDecoration: "none", fontSize: "0.88rem" }}>06 96 26 30 96</a>
+                    <a href="tel:0696334700" style={{ color: "#151515", textDecoration: "none", fontSize: "0.88rem" }}>06 96 33 47 00</a>
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function Footer() {
                   </svg>
                 </span>
                 <div>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.75rem", marginBottom: "0.15rem" }}>Email</p>
+                  <p style={{ color: "rgba(0,0,0,0.4)", fontSize: "0.75rem", marginBottom: "0.15rem" }}>Email</p>
                   <a href="mailto:organisation@antillessalons.com" className="email-link">
                     organisation@antillessalons.com
                   </a>
@@ -153,8 +153,8 @@ export default function Footer() {
                   </svg>
                 </span>
                 <div>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.75rem", marginBottom: "0.15rem" }}>Adresse</p>
-                  <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.88rem", lineHeight: 1.5 }}>
+                  <p style={{ color: "rgba(0,0,0,0.4)", fontSize: "0.75rem", marginBottom: "0.15rem" }}>Adresse</p>
+                  <p style={{ color: "#151515", fontSize: "0.88rem", lineHeight: 1.5 }}>
                     Centre Commercial de Bellevue<br />97200 Fort-de-France
                   </p>
                 </div>
@@ -163,7 +163,7 @@ export default function Footer() {
 
             {/* Social — Facebook, Instagram, YouTube uniquement */}
             <div style={{ marginTop: "2rem" }}>
-              <h4 style={{ fontSize: "0.85rem", fontWeight: 600, color: "rgba(255,255,255,0.6)", marginBottom: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              <h4 style={{ fontSize: "0.85rem", fontWeight: 600, color: "rgba(0,0,0,0.45)", marginBottom: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                 Suivez-nous
               </h4>
               <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -193,7 +193,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderTop: "1px solid rgba(0,0,0,0.07)",
             paddingTop: "1.5rem",
             display: "flex",
             flexWrap: "wrap",
@@ -202,10 +202,10 @@ export default function Footer() {
             gap: "1rem",
           }}
         >
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>
+          <p style={{ color: "rgba(0,0,0,0.35)", fontSize: "0.8rem" }}>
             © {new Date().getFullYear()} Antilles Salons. Tous droits réservés.
           </p>
-          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.75rem" }}>
+          <p style={{ color: "rgba(0,0,0,0.25)", fontSize: "0.75rem" }}>
             Martinique &amp; Guadeloupe
           </p>
         </div>

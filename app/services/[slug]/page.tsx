@@ -162,6 +162,12 @@ export default async function ServiceDetailPage({
 
       {/* ─── CONTENT ─── */}
       <section style={{ padding: "5rem 1.5rem" }}>
+        <style>{`
+          @media (max-width: 600px) {
+            .slug-content-box { padding: 1.5rem !important; }
+            .slug-cta-box { padding: 2rem 1.5rem !important; }
+          }
+        `}</style>
         <div
           style={{
             maxWidth: "900px",
@@ -169,6 +175,7 @@ export default async function ServiceDetailPage({
           }}
         >
           <div
+            className="slug-content-box"
             style={{
               background: "white",
               borderRadius: "1.5rem",
@@ -245,6 +252,7 @@ export default async function ServiceDetailPage({
 
           {/* CTA */}
           <div
+            className="slug-cta-box"
             style={{
               background: "linear-gradient(135deg, #514EA7, #2d2b5e)",
               borderRadius: "1.5rem",

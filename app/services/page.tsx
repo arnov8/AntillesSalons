@@ -86,12 +86,18 @@ export default function ServicesPage() {
 
       {/* ─── SERVICES LIST ─── */}
       <section style={{ padding: "5rem 1.5rem" }}>
+        <style>{`
+          @media (max-width: 600px) {
+            .service-card { grid-template-columns: 1fr !important; padding: 1.5rem !important; }
+            .service-card-btn { justify-self: start; }
+          }
+        `}</style>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             {services.map((service, index) => (
               <div
                 key={service.slug}
-                className="card-hover"
+                className="card-hover service-card"
                 style={{
                   background: "white",
                   borderRadius: "1.5rem",
@@ -157,7 +163,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Link */}
-                <div style={{ flexShrink: 0 }}>
+                <div className="service-card-btn" style={{ flexShrink: 0 }}>
                   <Link
                     href={`/services/${service.slug}`}
                     className="btn-primary"

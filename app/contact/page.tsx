@@ -99,6 +99,10 @@ export default function ContactPage() {
           @media (min-width: 768px) {
             .contact-grid { grid-template-columns: 1.4fr 1fr !important; }
           }
+          @media (max-width: 500px) {
+            .form-box { padding: 1.5rem !important; }
+            .phone-email-grid { grid-template-columns: 1fr !important; }
+          }
         `}</style>
         <div
           className="contact-grid"
@@ -112,6 +116,7 @@ export default function ContactPage() {
         >
           {/* ─ FORM ─ */}
           <div
+            className="form-box"
             style={{
               background: "white",
               borderRadius: "1.5rem",
@@ -174,7 +179,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone + Email */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                <div className="phone-email-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div>
                     <label style={labelStyle}>Téléphone portable</label>
                     <input

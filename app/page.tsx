@@ -302,7 +302,7 @@ export default function HomePage() {
                       textDecoration: "none",
                     }}
                   >
-                    Visiter le salon →
+                    {event.type === "Séminaire" ? "Visiter le séminaire →" : "Visiter le salon →"}
                   </a>
                 </div>
               </div>
@@ -586,8 +586,8 @@ export default function HomePage() {
               margin: "0 auto 2.5rem",
             }}
           >
-            Que vous soyez exposant ou simple curieux, notre équipe est disponible pour répondre
-            à toutes vos questions sur nos salons en Martinique et Guadeloupe.
+            Que vous soyez exposant, visiteur ou simple curieux, notre équipe est disponible pour répondre
+            à toutes vos questions sur nos évènements.
           </p>
           <Link href="/contact" className="btn-primary" style={{ fontSize: "1rem", padding: "1rem 2.5rem" }}>
             Je prends contact →
