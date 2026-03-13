@@ -304,13 +304,13 @@ export default function AboutPage() {
                 style={{
                   background: "white",
                   borderRadius: "1.25rem",
-                  padding: "1.5rem",
+                  padding: "1.25rem",
                   boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
                   border: "1px solid rgba(0,0,0,0.06)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  minHeight: "110px",
+                  height: "110px",
                 }}
               >
                 <Image
@@ -320,9 +320,10 @@ export default function AboutPage() {
                   height={80}
                   style={{
                     objectFit: "contain",
-                    maxHeight: `${60 * partner.scale}px`,
+                    height: "100%",
+                    maxHeight: "70px",
                     width: "auto",
-                    maxWidth: `${140 * partner.scale}px`,
+                    maxWidth: "150px",
                   }}
                 />
               </div>

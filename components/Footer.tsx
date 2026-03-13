@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
+      className="footer-main"
       style={{
         background: "transparent",
         color: "#151515",
@@ -45,10 +46,19 @@ export default function Footer() {
           font-weight: 500;
         }
         .email-link:hover { text-decoration: underline; }
+        @media (max-width: 640px) {
+          .footer-main { padding: 2rem 1.5rem 1.5rem !important; }
+          .footer-grid { gap: 2rem !important; }
+          .footer-nav-list { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.4rem 1.2rem !important; }
+          .footer-contact-gap { gap: 0.7rem !important; }
+          .footer-social-section { margin-top: 1.25rem !important; }
+          .footer-bottom { padding-top: 1rem !important; }
+        }
       `}</style>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Main footer grid */}
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
@@ -83,7 +93,7 @@ export default function Footer() {
               Organisateur de salons professionnels et séminaires en Martinique &amp; Guadeloupe
             </p>
             <nav style={{ marginTop: "1.5rem" }}>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <ul className="footer-nav-list" style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {[
                   { label: "Accueil", href: "/" },
                   { label: "À propos", href: "/about" },
@@ -112,7 +122,7 @@ export default function Footer() {
               En savoir plus?
             </h3>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+            <div className="footer-contact-gap" style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
               {/* Phone */}
               <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                 <span style={{ color: "#514EA7", marginTop: "2px" }}>
@@ -162,7 +172,7 @@ export default function Footer() {
             </div>
 
             {/* Social — Facebook, Instagram, YouTube uniquement */}
-            <div style={{ marginTop: "2rem" }}>
+            <div className="footer-social-section" style={{ marginTop: "2rem" }}>
               <h4 style={{ fontSize: "0.85rem", fontWeight: 600, color: "rgba(0,0,0,0.45)", marginBottom: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                 Suivez-nous
               </h4>
@@ -192,6 +202,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
+          className="footer-bottom"
           style={{
             borderTop: "1px solid rgba(0,0,0,0.07)",
             paddingTop: "1.5rem",

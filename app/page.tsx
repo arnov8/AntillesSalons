@@ -224,6 +224,11 @@ export default function HomePage() {
           </div>
 
           {/* Flexbox pour centrer les 2 dernières cartes */}
+          <style>{`
+            @media (max-width: 640px) {
+              .event-card { width: 100% !important; }
+            }
+          `}</style>
           <div
             style={{
               display: "flex",
@@ -235,7 +240,7 @@ export default function HomePage() {
             {events.map((event, index) => (
               <div
                 key={index}
-                className="card-hover"
+                className="card-hover event-card"
                 style={{
                   background: "white",
                   borderRadius: "1.5rem",
